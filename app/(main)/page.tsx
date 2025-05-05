@@ -91,7 +91,7 @@ export default function Home() {
     children: [
       heading({
         content:
-          "Flutter inspired React library for building consistent and scalable UIs",
+          "Flutter inspired React UI library",
       }),
       text({
         content:
