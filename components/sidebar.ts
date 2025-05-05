@@ -79,9 +79,11 @@ export const Sidebar = () => {
       }),
       navigationButton({
         label: "themeToggle",
-        variant: "ghost",
         className: "justify-start",
         href: "/docs/components/theme-toggle",
+        variant: pathname.includes("/docs/components/theme-toggle")
+          ? "secondary"
+          : "ghost",
       }),
       spacer(),
       heading({
@@ -93,9 +95,7 @@ export const Sidebar = () => {
         label: "form",
         className: "justify-start",
         href: "/docs/components/form",
-        variant: pathname.includes("/docs/components/form")
-          ? "secondary"
-          : "ghost",
+        variant: pathname === "/docs/components/form" ? "secondary" : "ghost",
       }),
       navigationButton({
         label: "formTextField",
