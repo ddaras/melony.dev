@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { root } from "melony";
-import { redirect } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
@@ -15,16 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      {root({
-        children: [children],
-        shouldRenderHtml: true,
-        navigate: async (path) => {
-          "use server";
-          redirect(path);
-        },
-      })}
+    <html>
+      <body>{children}</body>
       <Analytics />
-    </>
+    </html>
   );
 }
