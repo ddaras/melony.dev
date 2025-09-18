@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Melony",
-  description: "Flutter inspired React UI library",
+  description: "React tookit for building AI interfaces",
 };
 
 export default function RootLayout({

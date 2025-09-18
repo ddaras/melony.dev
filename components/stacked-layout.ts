@@ -1,5 +1,5 @@
 import { hstack, vstack } from "melony";
-import { header } from "./header";
+// import { header } from "./header";
 import { Sidebar } from "./sidebar";
 
 export const stackedLayout = ({
@@ -11,7 +11,7 @@ export const stackedLayout = ({
 }) => {
   return vstack({
     children: [
-      header(),
+      // header(),
       hstack({
         children: [
           showSidebar ? Sidebar() : null,
