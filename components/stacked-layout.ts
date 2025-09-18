@@ -19,10 +19,6 @@ export const stackedLayout = ({
             children: [children],
             className: `p-20 ${showSidebar ? "ml-64" : ""} w-full`,
           }),
-          // vstack({
-          //   children: [text({ content: "Right Sidebar" })],
-          //   className: "w-64 p-4",
-          // }),
         ],
       }),
     ],

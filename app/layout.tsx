@@ -19,13 +19,11 @@ export default function RootLayout({
       {root({
         children: [children],
         shouldRenderHtml: true,
-        // className: geistSans.className + " " + geistMono.className,
         navigate: async (path) => {
           "use server";
           redirect(path);
         },
       })}
-
       <Analytics />
     </>
   );
