@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/card";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { CodeBlock } from "@/components/ui/code-block";
+import { StarterTemplate } from "@/components/starter-template";
 
 export default function Page() {
   return (
@@ -222,6 +223,9 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Starter Template Section */}
+      <StarterTemplate variant="home" />
 
       {/* Code Example Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative">

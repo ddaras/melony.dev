@@ -1,5 +1,6 @@
 import { CodeBlock } from "@/components/ui/code-block";
 import { Badge } from "@/components/ui/badge";
+import { StarterTemplate } from "@/components/starter-template";
 import Link from "next/link";
 
 export default function DocsPage() {
@@ -74,6 +75,8 @@ export default function Chat() {
         </CodeBlock>
       </section>
 
+      <StarterTemplate variant="docs" />
+
       <section id="features">
         <h2 className="text-3xl font-bold mb-4">Key Features</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -113,6 +116,13 @@ export default function Chat() {
           >
             <h3 className="font-semibold mb-2">Installation</h3>
             <p className="text-sm text-muted-foreground">Get started with melony in your project</p>
+          </Link>
+          <Link 
+            href="/docs/starter-template" 
+            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+          >
+            <h3 className="font-semibold mb-2">Starter Template</h3>
+            <p className="text-sm text-muted-foreground">Jumpstart with our Next.js template</p>
           </Link>
           <Link 
             href="/docs/quickstart" 
