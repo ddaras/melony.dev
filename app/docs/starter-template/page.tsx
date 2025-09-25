@@ -1,7 +1,7 @@
 import { CodeBlock } from "@/components/ui/code-block";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StarterTemplate } from "@/components/starter-template";
 import { Github, ExternalLink, Terminal, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -25,7 +25,7 @@ export default function StarterTemplatePage() {
       <StarterTemplate variant="docs" />
 
       <section id="whats-included">
-        <h2 className="text-3xl font-bold mb-6">What's Included</h2>
+        <h2 className="text-3xl font-bold mb-6">What&apos;s Included</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
@@ -248,7 +248,7 @@ pnpm dev`}
         <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl border border-primary/20 p-6">
           <h3 className="text-xl font-semibold mb-3">Need Help?</h3>
           <p className="text-muted-foreground mb-4">
-            If you run into any issues with the starter template or need help getting started, we're here to help.
+            If you run into any issues with the starter template or need help getting started, we&apos;re here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button asChild>

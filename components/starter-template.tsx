@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Badge } from "@/components/ui/badge";
-import { Copy, Download, ExternalLink, Github, Terminal } from "lucide-react";
+import { Copy, ExternalLink, Github, Terminal } from "lucide-react";
 
 interface StarterTemplateProps {
   variant?: "home" | "docs";
@@ -63,7 +63,7 @@ export function StarterTemplate({ variant = "home" }: StarterTemplateProps) {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">What's included:</h4>
+                  <h4 className="font-semibold mb-2">What&apos;s included:</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
