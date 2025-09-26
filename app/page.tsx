@@ -27,10 +27,10 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center shadow-lg">
-                <MessageCircle className="w-6 h-6 text-primary-foreground" />
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center shadow-lg">
+                <MessageCircle className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+              <span className="text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
                 Melony
               </span>
             </div>
@@ -63,10 +63,10 @@ export default function Page() {
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 backdrop-blur-sm">
             ✨ Open Source React Toolkit
           </div>
-          <h1 className="text-4xl sm:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+          <h1 className="text-5xl font-extrabold tracking-tight mb-8 leading-[1.1]">
             TypeScript‑first, headless React toolkit for building AI chat UIs
           </h1>
-          <p className="text-xl sm:text-2xl text-muted-foreground/90 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
+          <p className="text-muted-foreground/90 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
             Build beautiful, streaming AI chat interfaces with fine-grained
             control. MelonyProvider manages state, hooks give you access to
             messages and status, and flexible parts system supports any message
@@ -107,10 +107,10 @@ export default function Page() {
         <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
               The Core Idea
             </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
               Everything you need to build modern streaming AI chat experiences
             </p>
           </div>
@@ -120,9 +120,7 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <MessageCircle className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-2">
-                  MelonyProvider
-                </CardTitle>
+                <CardTitle className="font-bold mb-2">MelonyProvider</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
@@ -136,7 +134,7 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Code className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-2">Hooks</CardTitle>
+                <CardTitle className="font-bold mb-2">Hooks</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
@@ -151,9 +149,7 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Zap className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-2">
-                  Flexible Parts
-                </CardTitle>
+                <CardTitle className="font-bold mb-2">Flexible Parts</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
@@ -166,64 +162,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              Key Features
-            </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              Everything you need for modern AI chat interfaces
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Zap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Streaming Support</h3>
-              <p className="text-sm text-muted-foreground">
-                Built-in support for streaming responses with automatic text
-                delta handling
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Code className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">TypeScript First</h3>
-              <p className="text-sm text-muted-foreground">
-                Full type safety with custom message types and extensible part
-                system
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <MessageCircle className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Headless Design</h3>
-              <p className="text-sm text-muted-foreground">
-                Complete control over UI with flexible hooks and components
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <ExternalLink className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Easy Integration</h3>
-              <p className="text-sm text-muted-foreground">
-                Works seamlessly with AI SDK and other streaming libraries
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Starter Template Section */}
       <StarterTemplate variant="home" />
 
@@ -232,10 +170,10 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
               30‑second Quickstart
             </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
               Basic chat component with streaming support
             </p>
           </div>
@@ -301,13 +239,13 @@ export default function Chat() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-50 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto text-center relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-6xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl font-bold mb-8 leading-tight">
               Ready to Build Streaming
               <span className="block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
                 AI Chat Interfaces?
               </span>
             </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="text-muted-foreground/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
               Join developers using melony to create beautiful, streaming AI
               chat experiences with full TypeScript support and complete
               control.

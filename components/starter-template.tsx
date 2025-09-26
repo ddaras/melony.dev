@@ -30,10 +30,10 @@ export function StarterTemplate({ variant = "home" }: StarterTemplateProps) {
       
       <div className={isHome ? "max-w-7xl mx-auto relative" : ""}>
         <div className={isHome ? "text-center mb-20" : "mb-8"}>
-          <h2 className={`${isHome ? "text-4xl sm:text-5xl" : "text-3xl"} font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text`}>
+          <h2 className={`${isHome ? "text-3xl font-bold" : "text-3xl"} font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text`}>
             {isHome ? "Get Started in 30 Seconds" : "Starter Template"}
           </h2>
-          <p className={`${isHome ? "text-xl sm:text-2xl" : "text-lg"} text-muted-foreground/90 max-w-3xl ${isHome ? "mx-auto" : ""} font-medium leading-relaxed`}>
+          <p className={`${isHome ? "text-lg" : "text-lg"} text-muted-foreground/90 max-w-3xl ${isHome ? "mx-auto" : ""} font-medium leading-relaxed`}>
             {isHome 
               ? "Use our Next.js starter template to jumpstart your AI chat application"
               : "Jumpstart your AI chat application with our Next.js starter template that includes everything you need to get started."
