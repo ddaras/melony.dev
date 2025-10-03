@@ -125,10 +125,14 @@ export default function Page() {
                       </div>
                     </div>
                     <div className="relative overflow-hidden rounded-lg border border-border/30">
-                      <img
-                        src="/screen-weather.png"
-                        alt="Melony weather component demo"
+                      <video
+                        src="/screen-chart.mov"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                        aria-label="Melony chart component demo"
                       />
                     </div>
                   </div>
