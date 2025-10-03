@@ -175,7 +175,7 @@ export default function DocsLayout({
           </aside>
 
           {/* Main content */}
-          <main className="lg:col-span-9">
+          <main className="lg:col-span-9 pb-20">
             <Breadcrumb items={breadcrumbItems} />
             <div className="prose prose-gray dark:prose-invert max-w-none">
               {children}
