@@ -1,23 +1,8 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  MessageCircle,
-  Code,
-  Zap,
-  Github,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, Zap, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { CodeBlock } from "@/components/ui/code-block";
-import { StarterTemplate } from "@/components/starter-template";
 
 export default function Page() {
   return (
@@ -25,19 +10,14 @@ export default function Page() {
       {/* Navigation */}
       <nav className="border-b border-border/20 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-18">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center shadow-lg">
-                <MessageCircle className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                Melony
-              </span>
-            </div>
-            <div className="flex items-center space-x-8">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="text-2xl">
+              Melony
+            </Link>
+            <div className="flex items-center space-x-6">
               <Link
                 href="/docs"
-                className="text-foreground/70 hover:text-foreground transition-all duration-300 font-medium hover:scale-105"
+                className="text-foreground/70 hover:text-foreground transition-colors"
               >
                 Documentation
               </Link>
@@ -45,7 +25,7 @@ export default function Page() {
                 href="https://github.com/ddaras/melony"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground transition-all duration-300 flex items-center space-x-2 font-medium hover:scale-105"
+                className="text-foreground/70 hover:text-foreground transition-colors flex items-center space-x-2"
               >
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
@@ -57,227 +37,119 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto text-center relative">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 backdrop-blur-sm">
-            ✨ Open Source React Toolkit
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+            <Zap className="w-4 h-4 mr-2" />
+            Zero Latency • Progressive Rendering
           </div>
-          <h1 className="text-5xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-            TypeScript‑first, headless React toolkit for building AI chat UIs
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            Stream React Components
+            <br />
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              from AI Responses
+            </span>
           </h1>
-          <p className="text-muted-foreground/90 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
-            Build beautiful, streaming AI chat interfaces with fine-grained
-            control. MelonyProvider manages state, hooks give you access to
-            messages and status, and flexible parts system supports any message
-            structure.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            Render UIs progressively as AI generates JSON—no waiting, no tool
+            calling latency.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="px-8 py-6 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <Button asChild size="lg">
               <Link href="/docs">
                 Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-6 border-2 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
-              asChild
-            >
+            <Button variant="outline" size="lg" asChild>
               <a
                 href="https://github.com/ddaras/melony"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 View on GitHub
-                <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </div>
+          <code className="px-4 py-2 bg-muted rounded-lg text-sm font-mono inline-block">
+            npm install melony zod
+          </code>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/20 to-muted/40 relative">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              The Core Idea
-            </h2>
-            <p className="text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              Everything you need to build modern streaming AI chat experiences
+      {/* Code Example */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">Simple & Powerful</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              As AI streams JSON, your React components render instantly—even
+              before the JSON is complete.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 bg-background/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <MessageCircle className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <CardTitle className="font-bold mb-2">MelonyProvider</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
-                  Manages streaming chat state and handles server communication.
-                  The foundation that powers all melony functionality.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-0 bg-background/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Code className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <CardTitle className="font-bold mb-2">Hooks</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
-                  Fine-grained access to messages, parts, status, and sending.
-                  Build custom UIs with complete control over the chat
-                  experience.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-0 bg-background/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Zap className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <CardTitle className="font-bold mb-2">Flexible Parts</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
-                  Supports any message structure with custom mappers.
-                  TypeScript-first with full type safety and extensibility.
-                </CardDescription>
-              </CardContent>
-            </Card>
+          <div className="bg-background border rounded-2xl p-6 shadow-lg">
+            <CodeBlock language="tsx">
+              {`import { MelonyCard } from "melony";
+
+<MelonyCard
+  text={streamingAIResponse}
+  components={{
+    "weather-card": WeatherCard,
+  }}
+/>`}
+            </CodeBlock>
           </div>
         </div>
       </section>
 
-      {/* Starter Template Section */}
-      <StarterTemplate variant="home" />
-
-      {/* Code Example Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              30‑second Quickstart
-            </h2>
-            <p className="text-muted-foreground/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              Basic chat component with streaming support
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-background to-muted/30 rounded-3xl border border-border/50 p-8 shadow-2xl backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  App.tsx
-                </div>
-              </div>
-              <CodeBlock language="tsx">
-                {`"use client";
-import {
-  MelonyProvider,
-  useMelonyMessages,
-  useMelonySend,
-  useMelonyStatus,
-} from "melony";
-
-function ChatMessages() {
-  const messages = useMelonyMessages();
-  const send = useMelonySend();
-  const status = useMelonyStatus();
-
-  return (
-    <div>
-      {messages.map((message) => (
-        <div key={message.id}>
-          <strong>{message.role}:</strong>
-          {message.parts.map((part, i) => (
-            <div key={i}>{part.type === "text" && part.text}</div>
-          ))}
-        </div>
-      ))}
-      <button onClick={() => send("Hello!")} disabled={status === "streaming"}>
-        {status === "streaming" ? "Sending..." : "Send"}
-      </button>
-    </div>
-  );
-}
-
-export default function Chat() {
-  return (
-    <MelonyProvider endpoint="/api/chat">
-      <ChatMessages />
-    </MelonyProvider>
-  );
-}`}
-              </CodeBlock>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-50 pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 leading-tight">
-              Ready to Build Streaming
-              <span className="block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-                AI Chat Interfaces?
-              </span>
-            </h2>
-            <p className="text-muted-foreground/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-              Join developers using melony to create beautiful, streaming AI
-              chat experiences with full TypeScript support and complete
-              control.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="px-10 py-6 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-            >
-              <Link href="/docs">
-                Start Building Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
+      {/* CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to build real-time AI UIs?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Type-safe, progressive, and instant. Start building AI interfaces
+            that feel native.
+          </p>
+          <Button asChild size="lg">
+            <Link href="/docs">
+              Read the Documentation
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/20 py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-t from-muted/30 to-transparent">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center shadow-md">
-              <MessageCircle className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              Melony
-            </span>
+      <footer className="border-t py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <span className="font-semibold text-foreground">Melony</span>
+          <div className="flex items-center gap-6">
+            <a
+              href="https://github.com/ddaras/melony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.npmjs.com/package/melony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              NPM
+            </a>
+            <Link
+              href="/docs"
+              className="hover:text-foreground transition-colors"
+            >
+              Documentation
+            </Link>
           </div>
-          <p className="text-sm text-muted-foreground/80 font-medium">
-            © 2025 Melony • Built with ❤️ for developers
-          </p>
+          <span>MIT License © 2025</span>
         </div>
       </footer>
     </div>

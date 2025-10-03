@@ -1,150 +1,111 @@
-import { CodeBlock } from "@/components/ui/code-block";
-import { Badge } from "@/components/ui/badge";
-import { StarterTemplate } from "@/components/starter-template";
 import Link from "next/link";
 
 export default function DocsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold mb-4">melony</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          TypeScript‑first, headless React toolkit for building AI chat UIs with streaming support.
+        <h1 className="text-5xl mb-4">Melony</h1>
+        <p className="text-2xl text-muted-foreground mb-4">
+          Generate React UIs from AI responses in real-time.
         </p>
-        <div className="flex items-center gap-2 mb-8">
-          <Badge variant="secondary">npm version</Badge>
-          <Badge variant="secondary">License</Badge>
-          <Badge variant="secondary">TypeScript</Badge>
-        </div>
+        <p className="text-lg text-muted-foreground mb-6">
+          No tool calling latency. No completion waiting. Just smooth,
+          progressive rendering as the AI thinks.
+        </p>
       </div>
 
-      <section id="core-idea">
-        <h2 className="text-3xl font-bold mb-4">The core idea</h2>
+      <section id="why-melony">
+        <h2 className="text-3xl font-bold mb-4">Why Melony?</h2>
         <ul className="space-y-3 text-muted-foreground">
-          <li>• <strong>MelonyProvider</strong> manages streaming chat state and handles server communication.</li>
-          <li>• <strong>Hooks</strong> give you fine-grained access to messages, parts, status, and sending.</li>
-          <li>• <strong>Flexible parts system</strong> supports any message structure with custom mappers.</li>
-          <li>• <strong>TypeScript-first</strong> with full type safety and extensibility.</li>
+          <li>
+            ⚡ <strong>Zero Latency</strong> - Components render progressively
+            during streaming
+          </li>
+          <li>
+            🎯 <strong>Smart Parsing</strong> - Handles incomplete JSON with
+            partial-json
+          </li>
+          <li>
+            🛡️ <strong>Type Safe</strong> - Full Zod schema integration
+          </li>
+          <li>
+            📝 <strong>Markdown Support</strong> - Built-in GFM rendering
+          </li>
+          <li>
+            🪶 <strong>Lightweight</strong> - Minimal dependencies
+          </li>
         </ul>
       </section>
 
-      <section id="quickstart">
-        <h2 className="text-3xl font-bold mb-4">30‑second quickstart</h2>
-        <p className="text-muted-foreground mb-6">
-          Basic chat component with streaming support:
-        </p>
-
-        <CodeBlock language="tsx">
-          {`"use client";
-import {
-  MelonyProvider,
-  useMelonyMessages,
-  useMelonySend,
-  useMelonyStatus,
-} from "melony";
-
-function ChatMessages() {
-  const messages = useMelonyMessages();
-  const send = useMelonySend();
-  const status = useMelonyStatus();
-
-  return (
-    <div>
-      {messages.map((message) => (
-        <div key={message.id}>
-          <strong>{message.role}:</strong>
-          {message.parts.map((part, i) => (
-            <div key={i}>{part.type === "text" && part.text}</div>
-          ))}
-        </div>
-      ))}
-      <button onClick={() => send("Hello!")} disabled={status === "streaming"}>
-        {status === "streaming" ? "Sending..." : "Send"}
-      </button>
-    </div>
-  );
-}
-
-export default function Chat() {
-  return (
-    <MelonyProvider endpoint="/api/chat">
-      <ChatMessages />
-    </MelonyProvider>
-  );
-}`}
-        </CodeBlock>
-      </section>
-
-      <StarterTemplate variant="docs" />
-
-      <section id="features">
-        <h2 className="text-3xl font-bold mb-4">Key Features</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">Streaming Support</h3>
-            <p className="text-muted-foreground">
-              Built-in support for streaming responses with automatic text delta handling for smooth user experience.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">TypeScript First</h3>
-            <p className="text-muted-foreground">
-              Full type safety with custom message types and extensible part system for any use case.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">Headless Design</h3>
-            <p className="text-muted-foreground">
-              Complete control over UI with flexible hooks and components that work with any design system.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">Easy Integration</h3>
-            <p className="text-muted-foreground">
-              Works seamlessly with AI SDK and other streaming libraries. Simple server setup required.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="next-steps">
-        <h2 className="text-3xl font-bold mb-4">Next Steps</h2>
+        <h2 className="text-3xl font-bold mb-4">Get Started</h2>
         <div className="grid md:grid-cols-2 gap-4">
-          <Link 
-            href="/docs/installation" 
-            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+          <Link
+            href="/docs/installation"
+            className="p-6 border border-border rounded-lg hover:bg-muted/50 transition-colors"
           >
-            <h3 className="font-semibold mb-2">Installation</h3>
-            <p className="text-sm text-muted-foreground">Get started with melony in your project</p>
+            <h3 className="font-semibold mb-2 text-lg">Installation</h3>
+            <p className="text-sm text-muted-foreground">
+              Install Melony and get started
+            </p>
           </Link>
-          <Link 
-            href="/docs/starter-template" 
-            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+          <Link
+            href="/docs/quick-start"
+            className="p-6 border border-border rounded-lg hover:bg-muted/50 transition-colors"
           >
-            <h3 className="font-semibold mb-2">Starter Template</h3>
-            <p className="text-sm text-muted-foreground">Jumpstart with our Next.js template</p>
+            <h3 className="font-semibold mb-2 text-lg">Quick Start</h3>
+            <p className="text-sm text-muted-foreground">
+              Build your first streaming UI in minutes
+            </p>
           </Link>
-          <Link 
-            href="/docs/quickstart" 
-            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+          <Link
+            href="/docs/complete-example"
+            className="p-6 border border-border rounded-lg hover:bg-muted/50 transition-colors"
           >
-            <h3 className="font-semibold mb-2">Quickstart Guide</h3>
-            <p className="text-sm text-muted-foreground">Build your first chat interface</p>
+            <h3 className="font-semibold mb-2 text-lg">Complete Example</h3>
+            <p className="text-sm text-muted-foreground">
+              End-to-end implementation guide
+            </p>
           </Link>
-          <Link 
-            href="/docs/text-deltas" 
-            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+          <Link
+            href="/docs/api/melony-card"
+            className="p-6 border border-border rounded-lg hover:bg-muted/50 transition-colors"
           >
-            <h3 className="font-semibold mb-2">Text Delta Handling</h3>
-            <p className="text-sm text-muted-foreground">Learn about streaming text updates</p>
+            <h3 className="font-semibold mb-2 text-lg">API Reference</h3>
+            <p className="text-sm text-muted-foreground">
+              Explore the complete API
+            </p>
           </Link>
-          <Link 
-            href="/docs/server-integration" 
-            className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+        </div>
+      </section>
+
+      <section id="links">
+        <h2 className="text-3xl font-bold mb-4">Links</h2>
+        <div className="flex gap-4">
+          <a
+            href="https://github.com/ddaras/melony"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
           >
-            <h3 className="font-semibold mb-2">Server Integration</h3>
-            <p className="text-sm text-muted-foreground">Connect to your AI backend</p>
-          </Link>
+            GitHub
+          </a>
+          <a
+            href="https://www.npmjs.com/package/melony"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            NPM
+          </a>
+          <a
+            href="https://github.com/ddaras/melony/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            Report Issues
+          </a>
         </div>
       </section>
     </div>

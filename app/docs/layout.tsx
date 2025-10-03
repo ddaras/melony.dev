@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { MessageCircle, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { usePathname } from "next/navigation";
 
 const navigationSections = [
   {
@@ -15,25 +18,25 @@ const navigationSections = [
         href: "/docs/installation",
       },
       {
-        name: "Quickstart",
-        href: "/docs/quickstart",
+        name: "Quick Start",
+        href: "/docs/quick-start",
       },
     ],
   },
   {
-    title: "Core Features",
+    title: "Guide",
     items: [
       {
-        name: "Text Delta Handling",
-        href: "/docs/text-deltas",
+        name: "Complete Example",
+        href: "/docs/complete-example",
       },
       {
-        name: "Custom Message Types",
-        href: "/docs/custom-types",
+        name: "Multiple Components",
+        href: "/docs/multiple-components",
       },
       {
-        name: "Advanced Usage",
-        href: "/docs/advanced-usage",
+        name: "How It Works",
+        href: "/docs/how-it-works",
       },
     ],
   },
@@ -41,29 +44,20 @@ const navigationSections = [
     title: "API Reference",
     items: [
       {
-        name: "MelonyProvider",
-        href: "/docs/melony-provider",
+        name: "MelonyCard",
+        href: "/docs/api/melony-card",
       },
       {
-        name: "Hooks",
-        href: "/docs/hooks",
+        name: "zodSchemaToPrompt",
+        href: "/docs/api/zod-schema-to-prompt",
       },
       {
-        name: "Types",
-        href: "/docs/types",
-      },
-    ],
-  },
-  {
-    title: "Integration",
-    items: [
-      {
-        name: "Server Integration",
-        href: "/docs/server-integration",
+        name: "zodSchemasToPrompt",
+        href: "/docs/api/zod-schemas-to-prompt",
       },
       {
-        name: "Examples",
-        href: "/docs/examples",
+        name: "defineComponentSchema",
+        href: "/docs/api/define-component-schema",
       },
     ],
   },
@@ -74,6 +68,10 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -81,10 +79,7 @@ export default function DocsLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold">Melony</span>
+              <span className="text-2xl">Melony</span>
             </Link>
             <div className="flex items-center space-x-6">
               <Link
@@ -123,7 +118,9 @@ export default function DocsLayout({
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className={`hover:text-foreground transition-colors ${
+                          item.href === pathname ? "" : "text-muted-foreground"
+                        }`}
                       >
                         {item.name}
                       </Link>
