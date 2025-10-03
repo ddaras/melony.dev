@@ -7,15 +7,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Stream React Components from AI Responses",
-  description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Melony provides ready-to-use React components with TypeScript support for modern chat experiences.",
+  description:
+    "Build beautiful AI chat interfaces with zero-latency progressive rendering. Melony provides ready-to-use React components with TypeScript support for modern chat experiences.",
   openGraph: {
     title: "Melony - Stream React Components from AI Responses",
-    description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+    description:
+      "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
     url: "https://melony.dev",
   },
   twitter: {
     title: "Melony - Stream React Components from AI Responses",
-    description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+    description:
+      "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
   },
   alternates: {
     canonical: "https://melony.dev",
@@ -26,10 +29,18 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       {/* Navigation */}
-      <nav className="border-b border-border/20 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+      <nav
+        className="border-b border-border/20 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50"
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-semibold" aria-label="Melony - Home">
+            <Link
+              href="/"
+              className="text-2xl font-semibold"
+              aria-label="Melony - Home"
+            >
               Melony
             </Link>
             <div className="flex items-center space-x-6">
@@ -37,7 +48,7 @@ export default function Page() {
                 href="/docs"
                 className="text-foreground/70 hover:text-foreground transition-colors"
               >
-                Documentation
+                Docs
               </Link>
               <a
                 href="https://github.com/ddaras/melony"
@@ -58,51 +69,89 @@ export default function Page() {
       {/* Hero Section */}
       <main>
         <section className="py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+          <div className="max-w-6xl mx-auto">
+            {/* <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mx-auto text-center">
             <Zap className="w-4 h-4 mr-2" />
             Zero Latency • Progressive Rendering
+          </div> */}
+
+            {/* Horizontal Layout: Taglines | Screen */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side: Taglines */}
+              <div className="text-center lg:text-left">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+                  Stream React Components
+                  <br />
+                  <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                    from AI Responses
+                  </span>
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10">
+                  Render UIs progressively as AI generates JSON—no waiting, no
+                  tool calling latency.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                  <Button asChild size="lg">
+                    <Link href="/docs">
+                      Get Started
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="lg" asChild>
+                    <a
+                      href="https://github.com/ddaras/melony"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub
+                    </a>
+                  </Button>
+                </div>
+                <code className="px-4 py-2 bg-muted rounded-lg text-sm font-mono inline-block">
+                  pnpm add melony zod
+                </code>
+              </div>
+
+              {/* Right Side: Demo Screenshot */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative group max-w-2xl w-full">
+                  <div className="absolute bg-gradient-to-r from-primary/20 to-primary/40 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative bg-background border border-border/50 rounded-2xl p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      </div>
+                      <div className="text-xs text-muted-foreground font-mono">
+                        melony.dev
+                      </div>
+                    </div>
+                    <div className="relative overflow-hidden rounded-lg border border-border/30">
+                      <img
+                        src="/screen-weather.png"
+                        alt="Melony weather component demo"
+                        className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            Stream React Components
-            <br />
-            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              from AI Responses
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Render UIs progressively as AI generates JSON—no waiting, no tool
-            calling latency.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button asChild size="lg">
-              <Link href="/docs">
-                Get Started
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://github.com/ddaras/melony"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on GitHub
-              </a>
-            </Button>
-          </div>
-          <code className="px-4 py-2 bg-muted rounded-lg text-sm font-mono inline-block">
-            pnpm add melony zod
-          </code>
-        </div>
         </section>
       </main>
 
       {/* Code Example */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="code-example-heading">
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8"
+        aria-labelledby="code-example-heading"
+      >
         <div className="max-w-4xl mx-auto">
           <header className="text-center mb-10">
-            <h2 id="code-example-heading" className="text-3xl font-bold mb-4">Simple & Powerful</h2>
+            <h2 id="code-example-heading" className="text-3xl font-bold mb-4">
+              Simple & Powerful
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Define schemas with Zod, stream from the server, and render
               instantly on the client.
@@ -212,7 +261,10 @@ function Chat() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="cta-heading">
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        aria-labelledby="cta-heading"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold mb-6">
             Ready to build real-time AI UIs?
