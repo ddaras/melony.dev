@@ -72,7 +72,7 @@ export default function Page() {
             </Button>
           </div>
           <code className="px-4 py-2 bg-muted rounded-lg text-sm font-mono inline-block">
-            npm install melony zod
+            pnpm add melony zod
           </code>
         </div>
       </section>
@@ -83,21 +83,109 @@ export default function Page() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Simple & Powerful</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              As AI streams JSON, your React components render instantly—even
-              before the JSON is complete.
+              Define schemas with Zod, stream from the server, and render
+              instantly on the client.
             </p>
           </div>
-          <div className="bg-background border rounded-2xl p-6 shadow-lg">
-            <CodeBlock language="tsx">
-              {`import { MelonyCard } from "melony";
 
-<MelonyCard
-  text={streamingAIResponse}
-  components={{
-    "weather-card": WeatherCard,
-  }}
-/>`}
-            </CodeBlock>
+          <div className="space-y-8">
+            {/* Step 1: Define Schema */}
+            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold mb-2">1. Define Schema</h3>
+                <p className="text-sm text-muted-foreground">
+                  Type-safe components with Zod
+                </p>
+              </div>
+              <CodeBlock language="tsx">
+                {`import { z } from "zod";
+import { zodSchemaToPrompt } from "melony/zod";
+
+const weatherSchema = z.object({
+  type: z.literal("weather-card"),
+  location: z.string(),
+  temperature: z.number(),
+  condition: z.string(),
+});
+
+const weatherUIPrompt = zodSchemaToPrompt({
+  type: "weather-card",
+  schema: weatherSchema,
+  description: "Display weather info",
+});
+ 
+
+export const WeatherCard: React.FC<z.infer<typeof weatherSchema>> = ({
+  location,
+  temperature,
+  condition,
+}) => (
+  <div className="p-4 border rounded-lg">
+    <h3 className="font-bold">{location}</h3>
+    <p>{temperature}°F - {condition}</p>
+  </div>
+);`}
+              </CodeBlock>
+            </div>
+
+            {/* Step 2: Server-Side */}
+            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold mb-2">
+                  2. Stream from Server
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Inject schema into AI system prompt
+                </p>
+              </div>
+              <CodeBlock language="tsx">
+                {`// app/api/chat/route.ts
+import { streamText } from "ai";
+import { openai } from "@ai-sdk/openai";
+import { weatherUIPrompt } from "@/components/weather";
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+
+  const result = streamText({
+    model: openai("gpt-4"),
+    system: \`Assistant. \${weatherUIPrompt}\`,
+    messages,
+  });
+
+  return result.toDataStreamResponse();
+}`}
+              </CodeBlock>
+            </div>
+
+            {/* Step 3: Client-Side */}
+            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold mb-2">
+                  3. Render Instantly
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Progressive rendering as JSON streams
+                </p>
+              </div>
+              <CodeBlock language="tsx">
+                {`import { MelonyCard } from "melony";
+import { useChat } from "ai/react";
+
+function Chat() {
+  const { messages } = useChat();
+
+  return messages.map(m => (
+    <MelonyCard
+      text={m.content}
+      components={{
+        "weather-card": WeatherCard
+      }}
+    />
+  ));
+}`}
+              </CodeBlock>
+            </div>
           </div>
         </div>
       </section>
