@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Melony",
     images: [
       {
-        url: "https://melony.dev/og-image.png",
+        url: "https://melony.dev/screen-weather.png",
         width: 1200,
         height: 630,
         alt: "Melony - React Toolkit for AI Chat Interfaces",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Melony - React Toolkit for AI Chat Interfaces",
     description: "Build beautiful AI chat interfaces with React. Zero-latency progressive rendering with TypeScript support.",
     creator: "@melonydev",
-    images: ["https://melony.dev/og-image.png"],
+    images: ["https://melony.dev/screen-weather.png"],
   },
   verification: {
     google: "your-google-verification-code", // Replace with actual verification code
