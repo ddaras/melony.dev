@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Zap, Github } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { CodeBlock } from "@/components/ui/code-block";
@@ -160,7 +160,7 @@ export default function Page() {
 
           <div className="space-y-8">
             {/* Step 1: Define Schema */}
-            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+            <div className="bg-background border rounded-2xl p-6">
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-2">1. Define Schema</h3>
                 <p className="text-sm text-muted-foreground">
@@ -199,7 +199,7 @@ export const WeatherCard: React.FC<z.infer<typeof weatherSchema>> = ({
             </div>
 
             {/* Step 2: Server-Side */}
-            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+            <div className="bg-background border rounded-2xl p-6">
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-2">
                   2. Stream from Server
@@ -229,7 +229,7 @@ export async function POST(req: Request) {
             </div>
 
             {/* Step 3: Client-Side */}
-            <div className="bg-background border rounded-2xl p-6 shadow-lg">
+            <div className="bg-background border rounded-2xl p-6">
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-2">
                   3. Render Instantly
