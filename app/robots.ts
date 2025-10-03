@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://docs.melony.dev/sitemap.xml',
+    sitemap: 'https://melony.dev/sitemap.xml',
   };
 } 

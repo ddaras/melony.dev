@@ -1,20 +1,26 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://docs.melony.dev';
+  const baseUrl = 'https://melony.dev';
   
   // Add your documentation routes here
   const routes = [
     '',
     '/docs',
-    '/docs/getting-started',
-    '/docs/components',
-    '/docs/api',
+    '/docs/installation',
+    '/docs/quick-start',
+    '/docs/how-it-works',
+    '/docs/complete-example',
+    '/docs/multiple-components',
+    '/docs/api/define-component-schema',
+    '/docs/api/melony-card',
+    '/docs/api/zod-schema-to-prompt',
+    '/docs/api/zod-schemas-to-prompt',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: route === '' ? 'daily' as const : 'weekly' as const,
+    priority: route === '' ? 1 : route === '/docs' ? 0.9 : 0.8,
   }));
 
   return routes;

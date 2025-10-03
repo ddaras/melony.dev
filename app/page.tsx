@@ -3,15 +3,33 @@ import { ArrowRight, Zap, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { CodeBlock } from "@/components/ui/code-block";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stream React Components from AI Responses",
+  description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Melony provides ready-to-use React components with TypeScript support for modern chat experiences.",
+  openGraph: {
+    title: "Melony - Stream React Components from AI Responses",
+    description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+    url: "https://melony.dev",
+  },
+  twitter: {
+    title: "Melony - Stream React Components from AI Responses",
+    description: "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+  },
+  alternates: {
+    canonical: "https://melony.dev",
+  },
+};
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       {/* Navigation */}
-      <nav className="border-b border-border/20 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50">
+      <nav className="border-b border-border/20 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-semibold">
+            <Link href="/" className="text-2xl font-semibold" aria-label="Melony - Home">
               Melony
             </Link>
             <div className="flex items-center space-x-6">
@@ -26,8 +44,9 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-foreground transition-colors flex items-center space-x-2"
+                aria-label="View Melony on GitHub (opens in new tab)"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-5 h-5" aria-hidden="true" />
                 <span>GitHub</span>
               </a>
               <ThemeSwitcher />
@@ -37,7 +56,8 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
+      <main>
+        <section className="py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
             <Zap className="w-4 h-4 mr-2" />
@@ -75,18 +95,19 @@ export default function Page() {
             pnpm add melony zod
           </code>
         </div>
-      </section>
+        </section>
+      </main>
 
       {/* Code Example */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="code-example-heading">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Simple & Powerful</h2>
+          <header className="text-center mb-10">
+            <h2 id="code-example-heading" className="text-3xl font-bold mb-4">Simple & Powerful</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Define schemas with Zod, stream from the server, and render
               instantly on the client.
             </p>
-          </div>
+          </header>
 
           <div className="space-y-8">
             {/* Step 1: Define Schema */}
@@ -191,9 +212,9 @@ function Chat() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="cta-heading">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold mb-6">
             Ready to build real-time AI UIs?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -201,9 +222,9 @@ function Chat() {
             that feel native.
           </p>
           <Button asChild size="lg">
-            <Link href="/docs">
+            <Link href="/docs" aria-label="Read the Melony documentation">
               Read the Documentation
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>

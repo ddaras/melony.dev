@@ -1,9 +1,27 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Documentation",
+  description: "Complete guide to building AI chat interfaces with Melony. Learn installation, quick start, API reference, and advanced patterns for progressive rendering.",
+  openGraph: {
+    title: "Melony Documentation - Build AI Chat Interfaces",
+    description: "Complete guide to building AI chat interfaces with Melony. Zero-latency progressive rendering with TypeScript support.",
+    url: "https://melony.dev/docs",
+  },
+  twitter: {
+    title: "Melony Documentation - Build AI Chat Interfaces",
+    description: "Complete guide to building AI chat interfaces with Melony. Zero-latency progressive rendering with TypeScript support.",
+  },
+  alternates: {
+    canonical: "https://melony.dev/docs",
+  },
+};
 
 export default function DocsPage() {
   return (
-    <div className="space-y-8">
-      <div>
+    <article className="space-y-8">
+      <header>
         <h1 className="text-5xl mb-4 font-semibold">Melony</h1>
         <p className="text-2xl text-muted-foreground mb-4">
           Generate React components from AI responses in real-time.
@@ -12,7 +30,7 @@ export default function DocsPage() {
           No tool calling latency. No completion waiting. Just smooth,
           progressive rendering as the AI thinks.
         </p>
-      </div>
+      </header>
 
       <section id="why-melony">
         <h2 className="text-3xl font-bold mb-4">Why Melony?</h2>
@@ -108,6 +126,6 @@ export default function DocsPage() {
           </a>
         </div>
       </section>
-    </div>
+    </article>
   );
 }

@@ -1,4 +1,22 @@
 import { CodeBlock } from "@/components/ui/code-block";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Installation",
+  description: "Install Melony and its peer dependencies to get started building AI chat interfaces. Available via npm, yarn, and pnpm with TypeScript support.",
+  openGraph: {
+    title: "Melony Installation Guide - React AI Chat Toolkit",
+    description: "Install Melony and its peer dependencies to get started building AI chat interfaces with progressive rendering.",
+    url: "https://melony.dev/docs/installation",
+  },
+  twitter: {
+    title: "Melony Installation Guide - React AI Chat Toolkit",
+    description: "Install Melony and its peer dependencies to get started building AI chat interfaces with progressive rendering.",
+  },
+  alternates: {
+    canonical: "https://melony.dev/docs/installation",
+  },
+};
 
 export default function InstallationPage() {
   return (

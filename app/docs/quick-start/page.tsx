@@ -1,4 +1,22 @@
 import { CodeBlock } from "@/components/ui/code-block";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quick Start",
+  description: "Get up and running with Melony in minutes. Learn how to create Zod schemas, setup server-side streaming, and render React components progressively from AI responses.",
+  openGraph: {
+    title: "Melony Quick Start Guide - Build AI Chat Interfaces",
+    description: "Get up and running with Melony in minutes. Progressive rendering with TypeScript support.",
+    url: "https://melony.dev/docs/quick-start",
+  },
+  twitter: {
+    title: "Melony Quick Start Guide - Build AI Chat Interfaces",
+    description: "Get up and running with Melony in minutes. Progressive rendering with TypeScript support.",
+  },
+  alternates: {
+    canonical: "https://melony.dev/docs/quick-start",
+  },
+};
 
 export default function QuickStartPage() {
   return (
