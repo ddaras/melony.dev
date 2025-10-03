@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
-import { Montserrat, Merriweather, Ubuntu_Mono } from "next/font/google";
+import { Manrope, Urbanist, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const montserrat = Montserrat({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const merriweather = Merriweather({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
   variable: "--font-serif",
   display: "swap",
 });
 
-const ubuntuMono = Ubuntu_Mono({
+const firaCode = Fira_Code({
   subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -49,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${merriweather.variable} ${ubuntuMono.variable}`}>
+      <body className={`${manrope.variable} ${urbanist.variable} ${firaCode.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -4,9 +4,9 @@ export default function DocsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-5xl mb-4">Melony</h1>
+        <h1 className="text-5xl mb-4 font-semibold">Melony</h1>
         <p className="text-2xl text-muted-foreground mb-4">
-          Generate React UIs from AI responses in real-time.
+          Generate React components from AI responses in real-time.
         </p>
         <p className="text-lg text-muted-foreground mb-6">
           No tool calling latency. No completion waiting. Just smooth,
