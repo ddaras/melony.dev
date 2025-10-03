@@ -54,10 +54,10 @@ export default function Page() {
                 href="https://github.com/ddaras/melony"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground transition-colors flex items-center space-x-2"
+                className="text-foreground/80 hover:text-foreground transition-colors flex items-center space-x-1"
                 aria-label="View Melony on GitHub (opens in new tab)"
               >
-                <Github className="w-5 h-5" aria-hidden="true" />
+                <Github className="w-4 h-4" aria-hidden="true" />
                 <span>GitHub</span>
               </a>
               <ThemeSwitcher />
