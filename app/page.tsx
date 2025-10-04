@@ -51,6 +51,12 @@ export default function Page() {
                 Docs
               </Link>
               <Link
+                href="/blog"
+                className="text-foreground/70 hover:text-foreground transition-colors"
+              >
+                Blog
+              </Link>
+              <Link
                 href="https://generative-ui-playground.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -484,6 +490,12 @@ function Chat() {
               className="hover:text-foreground transition-colors"
             >
               Documentation
+            </Link>
+            <Link
+              href="/blog"
+              className="hover:text-foreground transition-colors"
+            >
+              Blog
             </Link>
           </div>
           <span>MIT License © 2025</span>

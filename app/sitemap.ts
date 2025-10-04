@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://melony.dev';
   
-  // Add your documentation routes here
+  // Add your documentation and blog routes here
   const routes = [
     '',
     '/docs',
@@ -16,11 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/docs/api/melony-card',
     '/docs/api/zod-schema-to-prompt',
     '/docs/api/zod-schemas-to-prompt',
+    // Blog routes
+    '/blog',
+    '/blog/building-real-time-ai-chat-interfaces-react',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' as const : 'weekly' as const,
-    priority: route === '' ? 1 : route === '/docs' ? 0.9 : 0.8,
+    changeFrequency: route === '' ? 'daily' as const : route.startsWith('/blog') ? 'weekly' as const : 'weekly' as const,
+    priority: route === '' ? 1 : route === '/docs' ? 0.9 : route.startsWith('/blog') ? 0.8 : 0.8,
   }));
 
   return routes;
