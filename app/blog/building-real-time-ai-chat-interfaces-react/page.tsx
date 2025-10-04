@@ -110,35 +110,27 @@ export default function BlogPostPage() {
       <div className="prose prose-lg max-w-none">
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">
-            The Problem with Traditional AI UIs
+            The Traditional AI UI Challenge
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Traditional AI chat interfaces suffer from a fundamental UX problem:
-            users wait for complete responses before seeing any content. This
-            creates a jarring experience where users stare at loading spinners
-            while AI models process their requests.
+            Traditional AI chat interfaces often create a disconnect between AI thinking and user experience. When AI models need to generate structured data or UI components, users typically wait for complete responses before seeing any meaningful content. This creates a gap where the AI&apos;s reasoning process remains invisible to users.
           </p>
           <p className="text-lg text-muted-foreground mb-6">
-            Consider a weather app that uses AI to generate dynamic weather
-            cards. With traditional approaches, users wait 2-3 seconds for the
-            AI to complete its entire response before seeing anything. This
-            feels slow and unresponsive.
+            Consider a weather app that uses AI to generate dynamic weather cards. With traditional approaches, users wait for the AI to complete its entire response—including any data retrieval or processing—before seeing anything. This creates a black box experience where users don&apos;t understand what&apos;s happening.
           </p>
           <div className="bg-muted/50 border border-border rounded-lg p-6 mb-6">
             <h3 className="text-xl font-semibold mb-3">
-              Traditional Flow Problems:
+              Traditional Flow Limitations:
             </h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                • <strong>High perceived latency</strong> - Users wait for
-                complete responses
+                • <strong>Black box experience</strong> - Users can&apos;t see AI reasoning
               </li>
               <li>
-                • <strong>Poor engagement</strong> - Loading states create
-                abandonment
+                • <strong>All-or-nothing responses</strong> - No progressive feedback
               </li>
               <li>
-                • <strong>Type safety issues</strong> - Runtime errors from
+                • <strong>Type safety challenges</strong> - Runtime errors from
                 malformed AI responses
               </li>
               <li>
@@ -151,18 +143,22 @@ export default function BlogPostPage() {
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">
-            The Progressive Rendering Solution
+            An Experimental Approach: System Prompt Guidance
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Progressive rendering solves these problems by displaying components
-            as soon as the AI starts generating valid JSON. Instead of waiting
-            for complete responses, users see content appearing in real-time.
+            This is an experimental exploration of a different paradigm: what if we could guide AI models at the system prompt level to understand they have UI tools available while responding? Instead of treating AI responses as complete documents, we&apos;re exploring how to make AI aware of its UI capabilities as it generates content.
           </p>
           <p className="text-lg text-muted-foreground mb-6">
-            This approach reduces perceived latency by up to 70% and creates a
-            more engaging, responsive experience that feels native to modern web
-            applications.
+            The core hypothesis is that by giving LLMs guidance in their system prompt that they have UI components available, we can create a more transparent and interactive experience. When the AI knows it can render components progressively, it can structure its responses accordingly—creating a bridge between AI reasoning and user experience.
           </p>
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+            <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-3">
+              🧪 Experimental Hypothesis:
+            </h3>
+            <p className="text-blue-700 dark:text-blue-300">
+              By making AI models aware of their UI capabilities through system prompts, we can create more engaging, transparent interactions where users can see AI reasoning unfold in real-time through progressive component rendering.
+            </p>
+          </div>
         </section>
 
         <section className="mb-12">
@@ -288,10 +284,10 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
           </CodeBlock>
 
           <h3 className="text-2xl font-semibold mb-4 mt-8">
-            Step 3: Set Up Server-Side Streaming
+            Step 3: The Key Innovation - System Prompt Guidance
           </h3>
           <p className="text-muted-foreground mb-4">
-            Create an API route that streams AI responses with your schema:
+            Here&apos;s where our experimental approach shines. We guide the AI model through its system prompt to understand it has UI tools available:
           </p>
 
           <CodeBlock language="tsx">
@@ -305,9 +301,11 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: openai("gpt-4"),
-    system: \`You are a helpful weather assistant. When users ask about weather, respond with a weather card using this format:
+    system: \`You are a helpful weather assistant with UI capabilities. When users ask about weather, you can render interactive weather cards using this format:
 
 \${weatherUIPrompt}
+
+IMPORTANT: You have UI tools available. When appropriate, use the weather-card format to create rich, interactive components that users can see as you generate them. This allows for progressive rendering and a better user experience.
 
 Always provide accurate, up-to-date weather information. If you cannot access real weather data, clearly state this limitation.\`,
     messages,
@@ -318,6 +316,15 @@ Always provide accurate, up-to-date weather information. If you cannot access re
   return result.toDataStreamResponse();
 }`}
           </CodeBlock>
+          
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-6 mt-6">
+            <h4 className="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+              💡 The Game-Changing Insight
+            </h4>
+            <p className="text-yellow-700 dark:text-yellow-300">
+              By explicitly telling the AI it has UI tools available, we&apos;re experimenting with a new paradigm where AI models can be aware of their rendering capabilities while generating responses. This system prompt guidance approach could fundamentally change how we think about AI-human interaction.
+            </p>
+          </div>
 
           <h3 className="text-2xl font-semibold mb-4 mt-8">
             Step 4: Implement Client-Side Rendering
@@ -391,19 +398,18 @@ export default ChatInterface;`}
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">Performance Benefits</h2>
+          <h2 className="text-3xl font-bold mb-6">Experimental Benefits & Observations</h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Progressive rendering provides significant performance improvements:
+            While this is still an experimental approach, we&apos;ve observed some interesting benefits during our testing:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-green-800 dark:text-green-200 mb-3">
-                ⚡ Reduced Perceived Latency
+                🧠 AI Awareness
               </h3>
               <p className="text-green-700 dark:text-green-300">
-                Users see content within 200-500ms instead of waiting 2-3
-                seconds for complete responses.
+                AI models seem to structure responses differently when they know they have UI tools available, potentially creating more thoughtful component usage.
               </p>
             </div>
 
@@ -413,29 +419,36 @@ export default ChatInterface;`}
               </h3>
               <p className="text-blue-700 dark:text-blue-300">
                 Zod schemas ensure AI responses are validated and type-safe at
-                compile time.
+                compile time, reducing runtime errors.
               </p>
             </div>
 
             <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-3">
-                🎯 Better UX
+                🔄 Progressive Feedback
               </h3>
               <p className="text-purple-700 dark:text-purple-300">
-                Progressive rendering creates a more engaging, responsive user
-                experience.
+                Users can see AI reasoning unfold through component rendering, creating a more transparent interaction.
               </p>
             </div>
 
             <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-orange-800 dark:text-orange-200 mb-3">
-                🪶 Lightweight
+                ⚡ Experimental Performance
               </h3>
               <p className="text-orange-700 dark:text-orange-300">
-                Minimal bundle size with zero dependencies beyond React and your
-                UI library.
+                Early observations suggest improved perceived responsiveness, though this varies based on AI model performance and data retrieval needs.
               </p>
             </div>
+          </div>
+          
+          <div className="bg-muted/50 border border-border rounded-lg p-6">
+            <h3 className="text-xl font-semibold mb-3">
+              ⚠️ Important Note:
+            </h3>
+            <p className="text-muted-foreground">
+              This approach still requires AI models to retrieve any necessary data (like real weather information) before generating components. The performance benefits come from making the AI&apos;s reasoning process more transparent and engaging, not from eliminating data retrieval time.
+            </p>
           </div>
         </section>
 
@@ -560,22 +573,18 @@ function SafeMelonyCard({ text, components }) {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">Conclusion</h2>
+          <h2 className="text-3xl font-bold mb-6">Conclusion: A New Paradigm for AI Interaction</h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Building real-time AI chat interfaces with progressive rendering
-            transforms the user experience from static, waiting-based
-            interactions to dynamic, engaging conversations. By combining
-            React&apos;s component model with AI streaming, you can create interfaces
-            that feel instant and responsive.
+            This experimental approach represents a fundamental shift in how we think about AI-human interaction. Instead of treating AI responses as complete documents, we&apos;re exploring a paradigm where AI models are aware of their UI capabilities and can structure responses accordingly.
           </p>
           <p className="text-lg text-muted-foreground mb-6">
-            The key is to think of AI responses as streams of structured data
-            rather than complete documents. This paradigm shift opens up new
-            possibilities for creating truly interactive AI experiences.
+            The key insight is that system prompt guidance—telling AI models they have UI tools available—might be a game-changer for creating more transparent, engaging interactions. By making AI reasoning visible through progressive component rendering, we&apos;re bridging the gap between AI thinking and user experience.
+          </p>
+          <p className="text-lg text-muted-foreground mb-6">
+            While this is still experimental, we believe this approach could fundamentally change how we build AI interfaces. The combination of React&apos;s component model, AI streaming, and system prompt guidance opens up new possibilities for creating truly interactive AI experiences.
           </p>
           <p className="text-lg text-muted-foreground mb-8">
-            Start building your own AI interfaces today with Melony, and
-            experience the difference that progressive rendering makes.
+            We&apos;re excited to see where this experiment leads. Try building your own AI interfaces with Melony and help us explore this new frontier of AI-human interaction.
           </p>
         </section>
       </div>
