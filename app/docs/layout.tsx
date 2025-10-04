@@ -79,7 +79,7 @@ export default function DocsLayout({
 
     const segments = pathname.split("/").filter(Boolean);
     const items = [];
-    
+
     // Add "Documentation" as the first breadcrumb for all docs pages
     if (segments[0] === "docs") {
       items.push({ label: "Documentation", href: "/docs" });
@@ -90,21 +90,22 @@ export default function DocsLayout({
     for (let i = 1; i < segments.length; i++) {
       currentPath += `/${segments[i]}`;
       const isLast = i === segments.length - 1;
-      
+
       // Convert path segment to readable label
       let label = segments[i];
       if (segments[i] === "api") {
         label = "API Reference";
       } else {
         // Convert kebab-case to Title Case
-        label = label.split("-").map(word => 
-          word.charAt(0).toUpperCase() + word.slice(1)
-        ).join(" ");
+        label = label
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
       }
 
       items.push({
         label,
-        href: isLast ? undefined : currentPath
+        href: isLast ? undefined : currentPath,
       });
     }
 
@@ -116,18 +117,37 @@ export default function DocsLayout({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50" role="banner">
+      <header
+        className="border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50"
+        role="banner"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2" aria-label="Melony - Home">
-              <span className="text-2xl font-semibold">Melony</span>
+            <Link
+              href="/"
+              className="flex items-center space-x-2"
+              aria-label="Melony - Home"
+            >
+              <span className="text-2xl font-bold">Melony</span>
             </Link>
-            <nav className="flex items-center space-x-6" role="navigation" aria-label="Secondary navigation">
+            <nav
+              className="flex items-center space-x-6"
+              role="navigation"
+              aria-label="Secondary navigation"
+            >
               <Link
                 href="/"
                 className="text-foreground/80 hover:text-foreground transition-colors"
               >
                 Home
+              </Link>
+              <Link
+                href="https://generative-ui-playground.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/70 hover:text-foreground transition-colors"
+              >
+                Playground
               </Link>
               <a
                 href="https://github.com/ddaras/melony"
@@ -149,7 +169,11 @@ export default function DocsLayout({
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           {/* Sidebar */}
           <aside className="lg:col-span-3" role="complementary">
-            <nav className="sticky top-24 space-y-6" role="navigation" aria-label="Documentation navigation">
+            <nav
+              className="sticky top-24 space-y-6"
+              role="navigation"
+              aria-label="Documentation navigation"
+            >
               {navigationSections.map((section) => (
                 <div key={section.title} className="flex flex-col space-y-2">
                   <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider opacity-50">
@@ -161,9 +185,13 @@ export default function DocsLayout({
                         key={item.name}
                         href={item.href}
                         className={`hover:text-foreground transition-colors ${
-                          item.href === pathname ? "text-foreground font-medium" : "text-muted-foreground"
+                          item.href === pathname
+                            ? "text-foreground font-medium"
+                            : "text-muted-foreground"
                         }`}
-                        aria-current={item.href === pathname ? "page" : undefined}
+                        aria-current={
+                          item.href === pathname ? "page" : undefined
+                        }
                       >
                         {item.name}
                       </Link>

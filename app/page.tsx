@@ -38,7 +38,7 @@ export default function Page() {
           <div className="flex justify-between items-center h-16">
             <Link
               href="/"
-              className="text-2xl font-semibold"
+              className="text-2xl font-bold"
               aria-label="Melony - Home"
             >
               Melony
@@ -49,6 +49,14 @@ export default function Page() {
                 className="text-foreground/70 hover:text-foreground transition-colors"
               >
                 Docs
+              </Link>
+              <Link
+                href="https://generative-ui-playground.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/70 hover:text-foreground transition-colors"
+              >
+                Playground
               </Link>
               <a
                 href="https://github.com/ddaras/melony"
@@ -87,8 +95,8 @@ export default function Page() {
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10">
-                  Render UIs progressively as AI generates JSON—no waiting, no
-                  tool calling latency.
+                  Render UIs progressively as AI thinks—no waiting, no tool
+                  calling latency.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                   <Button asChild size="lg">
@@ -99,11 +107,11 @@ export default function Page() {
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <a
-                      href="https://github.com/ddaras/melony"
+                      href="https://generative-ui-playground.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View on GitHub
+                      Playground
                     </a>
                   </Button>
                 </div>
@@ -113,8 +121,8 @@ export default function Page() {
               <div className="flex justify-center lg:justify-end">
                 <div className="relative group max-w-2xl w-full">
                   <div className="absolute bg-gradient-to-r from-primary/20 to-primary/40 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                  <div className="relative bg-background border border-border/50 rounded-2xl p-4">
-                    <div className="flex items-center justify-between mb-3">
+                  <div className="relative bg-background border border-border/50 rounded-2xl">
+                    <div className="flex items-center justify-between p-4">
                       <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -124,14 +132,14 @@ export default function Page() {
                         melony.dev
                       </div>
                     </div>
-                    <div className="relative overflow-hidden rounded-lg border border-border/30">
+                    <div className="relative overflow-hidden rounded-b-lg">
                       <video
                         src="/screen-chart.mov"
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                        className="w-full h-auto transition-transform duration-300"
                         aria-label="Melony chart component demo"
                       />
                     </div>
@@ -453,7 +461,7 @@ function Chat() {
       {/* Footer */}
       <footer className="border-t py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <span className="font-semibold text-foreground">Melony</span>
+          <span className="font-bold text-lg text-foreground">Melony</span>
           <div className="flex items-center gap-6">
             <a
               href="https://github.com/ddaras/melony"
