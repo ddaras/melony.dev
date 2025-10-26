@@ -139,7 +139,7 @@ export default function Page() {
                     </div>
                     <div className="relative overflow-hidden rounded-b-lg">
                       <video
-                        src="/screen-chart.mov"
+                        src="/weather-card-720p.mov"
                         autoPlay
                         loop
                         muted

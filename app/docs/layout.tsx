@@ -22,22 +22,38 @@ const navigationSections = [
         name: "Quick Start",
         href: "/docs/quick-start",
       },
-    ],
-  },
-  {
-    title: "Guide",
-    items: [
       {
         name: "Complete Example",
         href: "/docs/complete-example",
       },
+    ],
+  },
+  {
+    title: "Core Concepts",
+    items: [
       {
-        name: "Multiple Components",
-        href: "/docs/multiple-components",
+        name: "Components",
+        href: "/docs/components",
       },
       {
-        name: "How It Works",
-        href: "/docs/how-it-works",
+        name: "Actions & Events",
+        href: "/docs/actions",
+      },
+      {
+        name: "Theming",
+        href: "/docs/theming",
+      },
+      {
+        name: "Control Flow",
+        href: "/docs/control-flow",
+      },
+      {
+        name: "Widget Templates",
+        href: "/docs/widgets",
+      },
+      {
+        name: "Context System",
+        href: "/docs/context",
       },
     ],
   },
@@ -45,20 +61,20 @@ const navigationSections = [
     title: "API Reference",
     items: [
       {
-        name: "MelonyCard",
-        href: "/docs/api/melony-card",
+        name: "MelonyProvider",
+        href: "/docs/api/melony-provider",
       },
       {
-        name: "zodSchemaToPrompt",
-        href: "/docs/api/zod-schema-to-prompt",
+        name: "MelonyMarkdown",
+        href: "/docs/api/melony-markdown",
       },
       {
-        name: "zodSchemasToPrompt",
-        href: "/docs/api/zod-schemas-to-prompt",
+        name: "MelonyWidget",
+        href: "/docs/api/melony-widget",
       },
       {
-        name: "defineComponentSchema",
-        href: "/docs/api/define-component-schema",
+        name: "MelonyParser",
+        href: "/docs/api/melony-parser",
       },
     ],
   },
