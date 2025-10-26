@@ -6,19 +6,19 @@ import { CodeBlock } from "@/components/ui/code-block";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Stream React Components from AI Responses",
+  title: "Melony - Generate React Components from AI Responses in Real-Time",
   description:
-    "Build beautiful AI chat interfaces with zero-latency progressive rendering. Melony provides ready-to-use React components with TypeScript support for modern chat experiences.",
+    "Build beautiful AI chat interfaces with HTML-like components that render progressively. Melony lets AI stream markdown and interactive components with zero tool-calling latency.",
   openGraph: {
-    title: "Melony - Stream React Components from AI Responses",
+    title: "Melony - Generate React Components from AI Responses",
     description:
-      "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+      "Build beautiful AI chat interfaces with HTML-like components that render progressively. Zero tool-calling latency, instant UIs.",
     url: "https://melony.dev",
   },
   twitter: {
-    title: "Melony - Stream React Components from AI Responses",
+    title: "Melony - Generate React Components from AI Responses",
     description:
-      "Build beautiful AI chat interfaces with zero-latency progressive rendering. Ready-to-use React components with TypeScript support.",
+      "Build beautiful AI chat interfaces with HTML-like components that render progressively. Zero tool-calling latency, instant UIs.",
   },
   alternates: {
     canonical: "https://melony.dev",
@@ -94,15 +94,14 @@ export default function Page() {
               {/* Left Side: Taglines */}
               <div className="text-center lg:text-left">
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                  Stream React Components
+                  Generate React Components
                   <br />
                   <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     from AI Responses
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10">
-                  Render UIs progressively as AI thinks—no waiting, no tool
-                  calling latency.
+                  AI streams HTML-like components alongside markdown—no waiting, no tool calling, instant UIs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                   <Button asChild size="lg">
@@ -171,8 +170,7 @@ export default function Page() {
               Why Choose Melony?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Build AI interfaces that feel instant and native with progressive
-              rendering and type safety.
+              Build AI interfaces that feel instant and native with HTML-like syntax, progressive rendering, and mixed markdown content.
             </p>
           </header>
 
@@ -196,8 +194,7 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Zero Latency</h3>
               <p className="text-muted-foreground">
-                Render components progressively as AI generates JSON—no waiting
-                for complete responses.
+                Render components progressively as AI streams HTML-like tags—no tool calling, no waiting.
               </p>
             </div>
 
@@ -218,10 +215,9 @@ export default function Page() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Type Safe</h3>
+              <h3 className="text-xl font-semibold mb-2">Mixed Content</h3>
               <p className="text-muted-foreground">
-                Full TypeScript support with Zod schemas for compile-time safety
-                and better DX.
+                Seamlessly combine markdown text with interactive components in a single stream.
               </p>
             </div>
 
@@ -242,10 +238,9 @@ export default function Page() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Developer Friendly</h3>
+              <h3 className="text-xl font-semibold mb-2">HTML-Like Syntax</h3>
               <p className="text-muted-foreground">
-                Simple API with React components that integrate seamlessly into
-                your existing stack.
+                AI uses familiar HTML-like tags like &lt;card&gt;, &lt;button&gt;, &lt;chart&gt; to build UIs naturally.
               </p>
             </div>
 
@@ -266,10 +261,9 @@ export default function Page() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Custom Components</h3>
+              <h3 className="text-xl font-semibold mb-2">Action Handling</h3>
               <p className="text-muted-foreground">
-                Define your own React components and let AI render them with
-                your exact styling.
+                Built-in action system for buttons and forms—handle user interactions effortlessly.
               </p>
             </div>
 
@@ -290,10 +284,9 @@ export default function Page() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Streaming Ready</h3>
+              <h3 className="text-xl font-semibold mb-2">Themeable</h3>
               <p className="text-muted-foreground">
-                Built for modern streaming APIs with support for AI SDK and
-                other streaming libraries.
+                Customize colors, spacing, typography, and more with the built-in theme system.
               </p>
             </div>
 
@@ -314,10 +307,9 @@ export default function Page() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Lightweight</h3>
+              <h3 className="text-xl font-semibold mb-2">Control Flow</h3>
               <p className="text-muted-foreground">
-                Minimal bundle size with zero dependencies beyond React and your
-                existing UI library.
+                Dynamic lists with &lt;for&gt; component, context variables, and template rendering.
               </p>
             </div>
           </div>
@@ -335,48 +327,35 @@ export default function Page() {
               Simple & Powerful
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Define schemas with Zod, stream from the server, and render
-              instantly on the client.
+              Add the UI guide to your system prompt, stream from the server, and render instantly with MelonyMarkdown.
             </p>
           </header>
 
           <div className="space-y-8">
-            {/* Step 1: Define Schema */}
+            {/* Step 1: What AI Streams */}
             <div className="bg-background border rounded-2xl p-6">
               <div className="mb-4">
-                <h3 className="text-lg font-semibold mb-2">1. Define Schema</h3>
+                <h3 className="text-lg font-semibold mb-2">1. What AI Streams</h3>
                 <p className="text-sm text-muted-foreground">
-                  Type-safe components with Zod
+                  AI streams markdown with HTML-like component tags
                 </p>
               </div>
-              <CodeBlock language="tsx">
-                {`import { z } from "zod";
-import { zodSchemaToPrompt } from "melony/zod";
+              <CodeBlock language="markdown">
+                {`Here's the weather in San Francisco:
 
-const weatherSchema = z.object({
-  type: z.literal("weather-card"),
-  location: z.string(),
-  temperature: z.number(),
-  condition: z.string(),
-});
+<card title="San Francisco Weather">
+  <row gap="md" align="center">
+    <text value="68°F" size="xl" weight="bold" />
+    <badge label="Sunny" variant="primary" />
+  </row>
+  <button 
+    label="Refresh" 
+    variant="outline" 
+    action='{"type":"refresh-weather","location":"SF"}' 
+  />
+</card>
 
-const weatherUIPrompt = zodSchemaToPrompt({
-  type: "weather-card",
-  schema: weatherSchema,
-  description: "Display weather info",
-});
- 
-
-export const WeatherCard: React.FC<z.infer<typeof weatherSchema>> = ({
-  location,
-  temperature,
-  condition,
-}) => (
-  <div className="p-4 border rounded-lg">
-    <h3 className="font-bold">{location}</h3>
-    <p>{temperature}°F - {condition}</p>
-  </div>
-);`}
+It's a beautiful day!`}
               </CodeBlock>
             </div>
 
@@ -387,21 +366,21 @@ export const WeatherCard: React.FC<z.infer<typeof weatherSchema>> = ({
                   2. Stream from Server
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Inject schema into AI system prompt
+                  Add MELONY_UI_GUIDE to your system prompt
                 </p>
               </div>
               <CodeBlock language="tsx">
                 {`// app/api/chat/route.ts
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { weatherUIPrompt } from "@/components/weather";
+import { MELONY_UI_GUIDE } from "melony/server";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
     model: openai("gpt-4"),
-    system: \`Assistant. \${weatherUIPrompt}\`,
+    system: MELONY_UI_GUIDE,
     messages,
   });
 
@@ -417,24 +396,31 @@ export async function POST(req: Request) {
                   3. Render Instantly
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Progressive rendering as JSON streams
+                  Use MelonyProvider and MelonyMarkdown
                 </p>
               </div>
               <CodeBlock language="tsx">
-                {`import { MelonyCard } from "melony";
+                {`"use client";
+import { MelonyProvider, MelonyMarkdown } from "melony";
 import { useChat } from "ai/react";
 
-function Chat() {
-  const { messages } = useChat();
+export default function Chat() {
+  const { messages } = useChat({ api: "/api/chat" });
 
-  return messages.map(m => (
-    <MelonyCard
-      text={m.content}
-      components={{
-        "weather-card": WeatherCard
-      }}
-    />
-  ));
+  const handleAction = (action) => {
+    if (action.type === "refresh-weather") {
+      // Handle the refresh action
+      console.log("Refreshing weather for:", action.payload.location);
+    }
+  };
+
+  return (
+    <MelonyProvider onAction={handleAction}>
+      {messages.map(m => (
+        <MelonyMarkdown key={m.id}>{m.content}</MelonyMarkdown>
+      ))}
+    </MelonyProvider>
+  );
 }`}
               </CodeBlock>
             </div>
@@ -452,8 +438,7 @@ function Chat() {
             Ready to build real-time AI UIs?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Type-safe, progressive, and instant. Start building AI interfaces
-            that feel native.
+            HTML-like syntax, progressive rendering, and instant UIs. Start building AI interfaces that feel native.
           </p>
           <Button asChild size="lg">
             <Link href="/docs" aria-label="Read the Melony documentation">
