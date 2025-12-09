@@ -50,12 +50,6 @@ export default function Page() {
               >
                 Docs
               </Link>
-              <Link
-                href="/blog"
-                className="text-foreground/70 hover:text-foreground transition-colors"
-              >
-                Blog
-              </Link>
               <a
                 href="https://github.com/ddaras/melony"
                 target="_blank"
@@ -410,12 +404,6 @@ export default function Home() {
               className="hover:text-foreground transition-colors"
             >
               Documentation
-            </Link>
-            <Link
-              href="/blog"
-              className="hover:text-foreground transition-colors"
-            >
-              Blog
             </Link>
           </div>
           <span>MIT License © 2025</span>
