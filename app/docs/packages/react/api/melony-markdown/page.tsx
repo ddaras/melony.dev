@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MelonyMarkdown API - Melony Documentation",
     description: "Complete API reference for MelonyMarkdown component.",
-    url: "https://melony.dev/docs/api/melony-markdown",
+    url: "https://melony.dev/docs/packages/react/api/melony-markdown",
   },
   twitter: {
     title: "MelonyMarkdown API - Melony Documentation",
     description: "Complete API reference for MelonyMarkdown component.",
   },
   alternates: {
-    canonical: "https://melony.dev/docs/api/melony-markdown",
+    canonical: "https://melony.dev/docs/packages/react/api/melony-markdown",
   },
 };
 
@@ -60,7 +60,7 @@ function Component() {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Props</h2>
-        
+
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-semibold mb-2">children</h3>
@@ -68,7 +68,7 @@ function Component() {
               <code>string</code> • Required
             </p>
             <p className="text-muted-foreground mb-3">
-              Markdown content with optional embedded Melony component tags. The content is parsed 
+              Markdown content with optional embedded Melony component tags. The content is parsed
               progressively, rendering markdown text and components as they become complete.
             </p>
             <CodeBlock language="tsx">
@@ -88,7 +88,7 @@ function Component() {
               <code>Partial&lt;Components&gt;</code> • Optional
             </p>
             <p className="text-muted-foreground mb-3">
-              Custom React components to override default markdown element rendering (e.g., custom 
+              Custom React components to override default markdown element rendering (e.g., custom
               heading, paragraph, or link components).
             </p>
             <CodeBlock language="tsx">
@@ -122,7 +122,7 @@ function Component() {
               <code>Record&lt;string, any&gt;</code> • Optional
             </p>
             <p className="text-muted-foreground mb-3">
-              Custom data object that becomes available as variables in component templates for 
+              Custom data object that becomes available as variables in component templates for
               dynamic content rendering.
             </p>
             <CodeBlock language="tsx">
@@ -152,7 +152,7 @@ Welcome, {{user.name}}!
       <section>
         <h2 className="text-2xl font-bold mb-4">Progressive Rendering</h2>
         <p className="text-muted-foreground mb-4">
-          <code>MelonyMarkdown</code> is designed for streaming AI responses. As content arrives, 
+          <code>MelonyMarkdown</code> is designed for streaming AI responses. As content arrives,
           it progressively parses and renders:
         </p>
         <ul className="space-y-2 text-muted-foreground list-disc list-inside mb-4">
@@ -346,7 +346,7 @@ export default function Chat() {
         <h2 className="text-2xl font-bold mb-4">See Also</h2>
         <div className="space-y-2 text-muted-foreground">
           <p>
-            <a href="/docs/api/melony-provider" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-provider" className="text-primary hover:underline">
               MelonyProvider
             </a>{" "}
             - Root provider component

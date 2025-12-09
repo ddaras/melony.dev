@@ -15,66 +15,33 @@ const navigationSections = [
         href: "/docs",
       },
       {
-        name: "Installation",
-        href: "/docs/installation",
-      },
-      {
         name: "Quick Start",
         href: "/docs/quick-start",
       },
-      {
-        name: "Complete Example",
-        href: "/docs/complete-example",
-      },
     ],
   },
   {
-    title: "Core Concepts",
+    title: "Packages",
     items: [
       {
-        name: "Components",
-        href: "/docs/components",
+        name: "@melony/core",
+        href: "/docs/packages/core",
       },
       {
-        name: "Actions & Events",
-        href: "/docs/actions",
+        name: "@melony/runtime",
+        href: "/docs/packages/runtime",
       },
       {
-        name: "Theming",
-        href: "/docs/theming",
+        name: "@melony/agents",
+        href: "/docs/packages/agents",
       },
       {
-        name: "Control Flow",
-        href: "/docs/control-flow",
+        name: "@melony/client",
+        href: "/docs/packages/client",
       },
       {
-        name: "Widget Templates",
-        href: "/docs/widgets",
-      },
-      {
-        name: "Context System",
-        href: "/docs/context",
-      },
-    ],
-  },
-  {
-    title: "API Reference",
-    items: [
-      {
-        name: "MelonyProvider",
-        href: "/docs/api/melony-provider",
-      },
-      {
-        name: "MelonyMarkdown",
-        href: "/docs/api/melony-markdown",
-      },
-      {
-        name: "MelonyWidget",
-        href: "/docs/api/melony-widget",
-      },
-      {
-        name: "MelonyParser",
-        href: "/docs/api/melony-parser",
+        name: "@melony/react",
+        href: "/docs/packages/react",
       },
     ],
   },
@@ -200,11 +167,10 @@ export default function DocsLayout({
                       <Link
                         key={item.name}
                         href={item.href}
-                        className={`hover:text-foreground transition-colors ${
-                          item.href === pathname
-                            ? "text-foreground font-medium"
-                            : "text-muted-foreground"
-                        }`}
+                        className={`hover:text-foreground transition-colors ${item.href === pathname
+                          ? "text-foreground font-medium"
+                          : "text-muted-foreground"
+                          }`}
                         aria-current={
                           item.href === pathname ? "page" : undefined
                         }

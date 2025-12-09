@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MelonyProvider API - Melony Documentation",
     description: "Complete API reference for MelonyProvider component.",
-    url: "https://melony.dev/docs/api/melony-provider",
+    url: "https://melony.dev/docs/packages/react/api/melony-provider",
   },
   twitter: {
     title: "MelonyProvider API - Melony Documentation",
     description: "Complete API reference for MelonyProvider component.",
   },
   alternates: {
-    canonical: "https://melony.dev/docs/api/melony-provider",
+    canonical: "https://melony.dev/docs/packages/react/api/melony-provider",
   },
 };
 
@@ -52,7 +52,7 @@ function App() {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Props</h2>
-        
+
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-semibold mb-2">children</h3>
@@ -179,7 +179,7 @@ function App() {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">TypeScript Types</h2>
-        
+
         <h3 className="text-lg font-semibold mb-3 mt-6">Action</h3>
         <CodeBlock language="tsx">
           {`interface Action {
@@ -334,7 +334,7 @@ export default function App() {
         <h2 className="text-2xl font-bold mb-4">See Also</h2>
         <div className="space-y-2 text-muted-foreground">
           <p>
-            <a href="/docs/api/melony-markdown" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-markdown" className="text-primary hover:underline">
               MelonyMarkdown
             </a>{" "}
             - Render markdown with embedded components

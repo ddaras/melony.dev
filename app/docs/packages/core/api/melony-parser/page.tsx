@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MelonyParser API - Melony Documentation",
     description: "Complete API reference for MelonyParser class.",
-    url: "https://melony.dev/docs/api/melony-parser",
+    url: "https://melony.dev/docs/packages/core/api/melony-parser",
   },
   twitter: {
     title: "MelonyParser API - Melony Documentation",
     description: "Complete API reference for MelonyParser class.",
   },
   alternates: {
-    canonical: "https://melony.dev/docs/api/melony-parser",
+    canonical: "https://melony.dev/docs/packages/core/api/melony-parser",
   },
 };
 
@@ -38,9 +38,9 @@ export default function MelonyParserPage() {
       <section>
         <h2 className="text-2xl font-bold mb-4">Overview</h2>
         <p className="text-muted-foreground mb-4">
-          <code>MelonyParser</code> is the underlying parser used by <code>MelonyMarkdown</code> and 
-          <code>MelonyWidget</code>. You typically don&apos;t need to use it directly, but it&apos;s available 
-          for advanced use cases like custom renderers, custom component registration, or building 
+          <code>MelonyParser</code> is the underlying parser used by <code>MelonyMarkdown</code> and
+          <code>MelonyWidget</code>. You typically don&apos;t need to use it directly, but it&apos;s available
+          for advanced use cases like custom renderers, custom component registration, or building
           your own parsing logic.
         </p>
       </section>
@@ -335,7 +335,7 @@ export default CustomMelonyRenderer;`}
             <li>Need low-level access to parsed blocks</li>
             <li>Implementing custom progressive rendering</li>
           </ul>
-          
+
           <p className="mt-4">
             <strong>Use MelonyMarkdown or MelonyWidget instead when:</strong>
           </p>
@@ -407,19 +407,19 @@ interface ComponentDef {
         <h2 className="text-2xl font-bold mb-4">See Also</h2>
         <div className="space-y-2 text-muted-foreground">
           <p>
-            <a href="/docs/api/melony-markdown" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-markdown" className="text-primary hover:underline">
               MelonyMarkdown
             </a>{" "}
             - High-level markdown rendering component
           </p>
           <p>
-            <a href="/docs/api/melony-widget" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-widget" className="text-primary hover:underline">
               MelonyWidget
             </a>{" "}
             - High-level widget rendering component
           </p>
           <p>
-            <a href="/docs/api/melony-provider" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-provider" className="text-primary hover:underline">
               MelonyProvider
             </a>{" "}
             - Root provider component

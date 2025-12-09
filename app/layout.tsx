@@ -24,14 +24,13 @@ const firaCode = Fira_Code({
 
 export const metadata: Metadata = {
   title: {
-    default: "Melony - React Toolkit for AI Chat Interfaces",
+    default: "Melony - TypeScript Framework for AI Apps",
     template: "%s | Melony"
   },
-  description: "Build beautiful AI chat interfaces with React. Melony provides ready-to-use components, TypeScript support, and zero-latency progressive rendering for modern chat experiences.",
+  description: "The complete TypeScript framework for building production-grade AI applications. Features a runtime engine, agent patterns, server-driven UI, and full React integration.",
   keywords: [
-    "react", "ai", "chat", "interface", "components", "typescript", "ui", "toolkit",
-    "streaming", "progressive rendering", "zod", "json", "real-time", "melony",
-    "ai ui", "react components", "chat interface", "streaming ui", "ai responses"
+    "typescript", "ai framework", "agentic ai", "react", "server-driven ui", "llm",
+    "ai agents", "melony", "production ai", "type-safe", "streaming"
   ],
   authors: [{ name: "Melony Team" }],
   creator: "Melony Team",
@@ -51,24 +50,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://melony.dev",
-    title: "Melony - React Toolkit for AI Chat Interfaces",
-    description: "Build beautiful AI chat interfaces with React. Zero-latency progressive rendering with TypeScript support.",
+    title: "Melony - TypeScript Framework for AI Apps",
+    description: "The complete TypeScript framework for building production-grade AI applications. Runtime engine, agents, and UI.",
     siteName: "Melony",
     images: [
       {
-        url: "https://melony.dev/screen-weather.png",
+        url: "https://melony.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Melony - React Toolkit for AI Chat Interfaces",
+        alt: "Melony - TypeScript Framework for AI Apps",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melony - React Toolkit for AI Chat Interfaces",
-    description: "Build beautiful AI chat interfaces with React. Zero-latency progressive rendering with TypeScript support.",
+    title: "Melony - TypeScript Framework for AI Apps",
+    description: "The complete TypeScript framework for building production-grade AI applications. Runtime engine, agents, and UI.",
     creator: "@melonydev",
-    images: ["https://melony.dev/screen-weather.png"],
+    images: ["https://melony.dev/og-image.png"],
   },
   verification: {
     google: "your-google-verification-code", // Replace with actual verification code

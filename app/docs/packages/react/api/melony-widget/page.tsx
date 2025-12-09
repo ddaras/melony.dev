@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MelonyWidget API - Melony Documentation",
     description: "Complete API reference for MelonyWidget component.",
-    url: "https://melony.dev/docs/api/melony-widget",
+    url: "https://melony.dev/docs/packages/react/api/melony-widget",
   },
   twitter: {
     title: "MelonyWidget API - Melony Documentation",
     description: "Complete API reference for MelonyWidget component.",
   },
   alternates: {
-    canonical: "https://melony.dev/docs/api/melony-widget",
+    canonical: "https://melony.dev/docs/packages/react/api/melony-widget",
   },
 };
 
@@ -58,7 +58,7 @@ function Component() {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Props</h2>
-        
+
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-semibold mb-2">children</h3>
@@ -66,7 +66,7 @@ function Component() {
               <code>string | ComponentDef</code> • Required
             </p>
             <p className="text-muted-foreground mb-3">
-              Either a string containing Melony component markup, or a ComponentDef object defining 
+              Either a string containing Melony component markup, or a ComponentDef object defining
               the component structure programmatically.
             </p>
             <p className="text-muted-foreground mb-3 font-semibold">String Format:</p>
@@ -122,7 +122,7 @@ const widget = \`
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
-        
+
         <h3 className="text-lg font-semibold mb-3 mt-6">1. Rendering Pure Components</h3>
         <p className="text-muted-foreground mb-4">
           When you have component markup without any markdown text:
@@ -229,7 +229,7 @@ const def: ComponentDef = {
             <li>You&apos;re building programmatic component definitions</li>
             <li>You&apos;re testing components in isolation</li>
           </ul>
-          
+
           <p className="mt-4">
             <strong>Use MelonyMarkdown when:</strong>
           </p>
@@ -337,13 +337,13 @@ export default WeatherDashboard;`}
         <h2 className="text-2xl font-bold mb-4">See Also</h2>
         <div className="space-y-2 text-muted-foreground">
           <p>
-            <a href="/docs/api/melony-markdown" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-markdown" className="text-primary hover:underline">
               MelonyMarkdown
             </a>{" "}
             - For markdown with embedded components
           </p>
           <p>
-            <a href="/docs/api/melony-provider" className="text-primary hover:underline">
+            <a href="/docs/packages/react/api/melony-provider" className="text-primary hover:underline">
               MelonyProvider
             </a>{" "}
             - Root provider component
