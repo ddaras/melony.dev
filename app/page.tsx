@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Github, Terminal } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import type { Metadata } from "next";
+import { QuickStartCommand } from "@/components/quick-start-command";
 
 export const metadata: Metadata = {
   title: "Melony - TypeScript Framework for AI Apps",
@@ -58,17 +59,43 @@ export default function Page() {
         </div>
       </nav>
 
-      {/* Coming Soon */}
-      <main className="flex-1 flex items-center justify-center">
-        <div className="text-center">
+      {/* Hero Section */}
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Coming Soon
+              Melony
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground">
-            We're working on something amazing.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            The complete TypeScript framework for building production-grade AI applications
           </p>
+          
+          <div className="mb-8">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 backdrop-blur-sm">
+              <Terminal className="w-4 h-4 mr-2" />
+              Quick Start
+            </div>
+            <QuickStartCommand />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* <Link
+              href="/docs/quick-start"
+              className="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+            >
+              View Documentation
+            </Link> */}
+            <a
+              href="https://github.com/ddaras/melony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-border hover:bg-muted transition-colors"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              GitHub
+            </a>
+          </div>
         </div>
       </main>
     </div>

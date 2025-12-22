@@ -17,9 +17,22 @@ export default function QuickStartPage() {
       </div>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">1. Install Packages</h2>
+        <h2 className="text-2xl font-bold mb-4">1. Create a New Project</h2>
         <p className="text-muted-foreground mb-4">
-          Install the core Melony packages along with the React integration:
+          Get started quickly with the official Melony starter template:
+        </p>
+        <CodeBlock language="bash">
+          npx create-melony-app@latest
+        </CodeBlock>
+        <p className="text-muted-foreground mt-4 text-sm">
+          This will create a new Next.js project with Melony configured and ready to use. Follow the prompts to set up your project.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">Alternative: Manual Installation</h2>
+        <p className="text-muted-foreground mb-4">
+          If you prefer to set up manually, install the core Melony packages along with the React integration:
         </p>
         <CodeBlock language="bash">
           npm install @melony/react @melony/runtime @melony/agents @melony/client
