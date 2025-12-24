@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Github } from "lucide-react";
+import { Github, MessageSquare } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export const metadata: Metadata = {
@@ -61,6 +61,16 @@ export default function BlogLayout({
                 Playground
               </Link>
               <a
+                href="https://discord.gg/j2uF5n8vJK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-foreground transition-colors flex items-center space-x-1"
+                aria-label="Join Melony on Discord (opens in new tab)"
+              >
+                <MessageSquare className="w-4 h-4" aria-hidden="true" />
+                <span>Discord</span>
+              </a>
+              <a
                 href="https://github.com/ddaras/melony"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,6 +96,14 @@ export default function BlogLayout({
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <span className="font-bold text-lg text-foreground">Melony</span>
           <div className="flex items-center gap-6">
+            <a
+              href="https://discord.gg/j2uF5n8vJK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              Discord
+            </a>
             <a
               href="https://github.com/ddaras/melony"
               target="_blank"

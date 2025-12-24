@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Terminal } from "lucide-react";
+import { Github, Terminal, MessageSquare } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import type { Metadata } from "next";
 import { QuickStartCommand } from "@/components/quick-start-command";
@@ -45,6 +45,16 @@ export default function Page() {
               </span>
             </Link>
             <div className="flex items-center space-x-6">
+              <a
+                href="https://discord.gg/j2uF5n8vJK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-foreground transition-colors flex items-center space-x-1"
+                aria-label="Join Melony on Discord (opens in new tab)"
+              >
+                <MessageSquare className="w-4 h-4" aria-hidden="true" />
+                <span>Discord</span>
+              </a>
               <a
                 href="https://github.com/ddaras/melony"
                 target="_blank"

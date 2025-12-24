@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Github, MessageSquare } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { usePathname } from "next/navigation";
@@ -132,6 +132,16 @@ export default function DocsLayout({
               >
                 Playground
               </Link>
+              <a
+                href="https://discord.gg/j2uF5n8vJK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-foreground transition-colors flex items-center space-x-1"
+                aria-label="Join Melony on Discord (opens in new tab)"
+              >
+                <MessageSquare className="w-4 h-4" aria-hidden="true" />
+                <span>Discord</span>
+              </a>
               <a
                 href="https://github.com/ddaras/melony"
                 target="_blank"
