@@ -40,7 +40,9 @@ export default function Page() {
               className="text-2xl font-bold flex items-center gap-2"
               aria-label="Melony - Home"
             >
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Melony</span>
+              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Melony
+              </span>
             </Link>
             <div className="flex items-center space-x-6">
               <a
@@ -64,13 +66,13 @@ export default function Page() {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Build Your AI App Today
+              Melony
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            The complete TypeScript framework for building production-grade AI applications
+            The Event-Streaming AI Agent Runtime with Built-in SDUI.
           </p>
-          
+
           <div className="mb-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 backdrop-blur-sm">
               <Terminal className="w-4 h-4 mr-2" />
