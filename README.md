@@ -1,27 +1,24 @@
-# Melony Landing
+# Melony
 
-Minimal Vite + React marketing site for Melony.
+Landing page for **Melony** — the first frontend agent.
+
+Astro landing page at the repo root.
 
 ## Local development
 
-From the repo root:
-
 ```bash
-pnpm --filter @melony/app-landing dev
+npm install
+npm run dev
 ```
 
 ## Build
 
 ```bash
-pnpm --filter @melony/app-landing build
+npm run build
 ```
 
-## Deploy on Vercel
+## Preview
 
-1. Import this monorepo into Vercel.
-2. Set the project root directory to `apps/landing`.
-3. Install command: `pnpm install`.
-4. Build command: `pnpm build`.
-5. Output directory: `dist`.
-
-`vercel.json` is included for a minimal Vite deployment config.
+```bash
+npm run preview
+```
