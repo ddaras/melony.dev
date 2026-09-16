@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const whatItIs = [
+	{
+		title: 'Sees the UI',
+		body: 'Melony reads the live interface — components, state, and layout — not just the repo.',
+	},
+	{
+		title: 'Writes the frontend',
+		body: 'It proposes, edits, and iterates on UI the way a frontend engineer would.',
+	},
+	{
+		title: 'Ships in place',
+		body: 'Changes land in your app, not in a chat window. Preview, refine, done.',
+	},
+];
+
+const howItWorks = [
+	{
+		step: '01',
+		title: 'Point it at a product',
+		body: 'Open Melony on a page, a component, or a whole flow you want to improve.',
+	},
+	{
+		step: '02',
+		title: 'Describe the outcome',
+		body: 'Ask for a layout, a fix, or a new interaction. Melony plans against the actual UI.',
+	},
+	{
+		step: '03',
+		title: 'Review and ship',
+		body: 'Inspect the diff, tweak the result, and keep what works.',
+	},
+];
+---
+
+<Layout>
+	<div class="mx-auto flex min-h-dvh max-w-5xl flex-col px-6">
+		<header class="flex items-center justify-between py-6">
+			<a href="/" class="text-sm font-medium tracking-wide">Melony</a>
+			<a
+				href="#cta"
+				class="text-sm text-muted transition-colors hover:text-ink"
+			>
+				Get early access
+			</a>
+		</header>
+
+		<main class="flex flex-1 flex-col">
+			<section class="flex flex-1 flex-col justify-center border-t border-line py-24 md:py-32">
+				<p class="mb-6 text-xs font-medium uppercase tracking-[0.22em] text-muted">
+					First Frontend Agent
+				</p>
+				<h1 class="max-w-3xl text-5xl leading-[1.05] font-semibold tracking-tight text-balance md:text-7xl">
+					Melony
+				</h1>
+				<p class="mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty md:text-xl">
+					An agent that lives in the frontend. It sees the interface, writes the code, and ships the UI.
+				</p>
+				<div class="mt-10 flex flex-wrap items-center gap-4">
+					<a
+						href="#cta"
+						class="inline-flex items-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-canvas transition-opacity hover:opacity-90"
+					>
+						Join the waitlist
+					</a>
+					<a
+						href="#what"
+						class="inline-flex items-center px-2 py-2.5 text-sm text-muted transition-colors hover:text-ink"
+					>
+						What it is
+					</a>
+				</div>
+			</section>
+
+			<section id="what" class="border-t border-line py-20 md:py-24">
+				<p class="mb-10 text-xs font-medium uppercase tracking-[0.22em] text-muted">
+					What it is
+				</p>
+				<div class="grid gap-10 md:grid-cols-3 md:gap-8">
+					{
+						whatItIs.map((item) => (
+							<div>
+								<h2 class="text-lg font-medium">{item.title}</h2>
+								<p class="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="how" class="border-t border-line py-20 md:py-24">
+				<p class="mb-10 text-xs font-medium uppercase tracking-[0.22em] text-muted">
+					How it works
+				</p>
+				<div class="grid gap-10 md:grid-cols-3 md:gap-8">
+					{
+						howItWorks.map((item) => (
+							<div>
+								<p class="font-mono text-xs text-accent">{item.step}</p>
+								<h2 class="mt-3 text-lg font-medium">{item.title}</h2>
+								<p class="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="cta" class="border-t border-line py-20 md:py-24">
+				<h2 class="max-w-xl text-3xl font-semibold tracking-tight text-balance md:text-4xl">
+					Build the interface with an agent that can see it.
+				</h2>
+				<p class="mt-4 max-w-lg text-muted">
+					Placeholder for now — early access and product details coming soon.
+				</p>
+				<a
+					href="mailto:hello@melony.dev"
+					class="mt-8 inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-canvas transition-opacity hover:opacity-90"
+				>
+					Say hello
+				</a>
+			</section>
+		</main>
+
+		<footer class="border-t border-line py-8 text-sm text-muted">
+			<p>© {new Date().getFullYear()} Melony. All rights reserved.</p>
+		</footer>
+	</div>
+</Layout>
